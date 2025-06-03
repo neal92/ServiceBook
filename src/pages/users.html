@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceBook - Gestion des utilisateurs</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>ServiceBook</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="vehicles.html">Véhicules</a></li>
+                <li><a href="maintenance.html">Entretien</a></li>
+                <li><a href="users.html" class="active">Utilisateurs</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Gestion des utilisateurs</h2>
+        
+        <div class="admin-panel">
+            <h3>Ajouter un utilisateur</h3>
+            <form id="addUserForm">
+                <div class="form-group">
+                    <label for="newUsername">Identifiant</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Mot de passe</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="userRole">Rôle</label>
+                    <select id="userRole" name="userRole">
+                        <option value="user">Utilisateur</option>
+                        <option value="admin">Administrateur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Ajouter</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="users-list">
+            <h3>Liste des utilisateurs</h3>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Rôle</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <!-- Liste des utilisateurs générée dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; ServiceBook 2023</p>
+    </footer>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/users.js"></script>
+</body>
+</html>
